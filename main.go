@@ -29,7 +29,7 @@ func goDotEnvVariable(key string) string {
 func main() {
 	godotenv.Load()
 
-	PORT := goDotEnvVariable("PORT")
+	// PORT := goDotEnvVariable("PORT")
 
 	r := mux.NewRouter()
 
@@ -40,7 +40,8 @@ func main() {
 
 	srv := &http.Server{
 		Handler: r,
-		Addr:    "127.0.0.1:" + PORT,
+		Addr:    "127.0.0.1:1812",
+		// Addr:    "127.0.0.1:" + PORT,
 		// Good practice: enforce timeouts for servers you create!
 		WriteTimeout: 15 * time.Second,
 		ReadTimeout:  15 * time.Second,
