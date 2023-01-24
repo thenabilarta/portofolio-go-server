@@ -1,3 +1,3 @@
 Setup port
 
-PORT=http://localhost:${your_port_number}
+PORT=YOUR_PORT_NUMBER
