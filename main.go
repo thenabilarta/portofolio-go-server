@@ -6,28 +6,13 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
-	"os"
 	"strings"
 	"time"
 
 	"github.com/gorilla/mux"
-	"github.com/joho/godotenv"
 )
 
-func goDotEnvVariable(key string) string {
-
-	// load .env file
-	err := godotenv.Load(".env")
-
-	if err != nil {
-		log.Fatalf("Error loading .env file")
-	}
-
-	return os.Getenv(key)
-}
-
 func main() {
-	godotenv.Load()
 
 	// PORT := goDotEnvVariable("PORT")
 
@@ -40,7 +25,7 @@ func main() {
 
 	srv := &http.Server{
 		Handler: r,
-		Addr:    "127.0.0.1:1812",
+		Addr:    ":1812",
 		// Addr:    "127.0.0.1:" + PORT,
 		// Good practice: enforce timeouts for servers you create!
 		WriteTimeout: 15 * time.Second,
