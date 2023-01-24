@@ -1,0 +1,1 @@
+gin --appPort 1812 --port 10010 --all -i run main.go
